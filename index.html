@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohd Shamsuddin - Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      color: #374151;
+    }
+
+    .resume-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header-section {
+      background-color: #1f2937;
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .header-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .header-section p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+
+    .contact-info a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: #ffffff;
+    }
+
+    .main-content {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sidebar {
+      background-color: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .sidebar h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .main-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1f2937;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-item,
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-item p,
+    .education-item p {
+      color: #6b7280;
+    }
+
+    .experience-item ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-list span {
+      display: inline-block;
+      background-color: #e5e7eb;
+      color: #4b5563;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="resume-container">
+    <!-- Header Section -->
+    <div class="header-section">
+      <h1 id="name"></h1>
+      <div class="contact-info mt-4 space-x-4 text-sm">
+        <span id="location"></span>
+        <span id="phone"></span>
+        <a href="#" id="email-link"></a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <div class="mt-8">
+          <h2 class="section-title">Technical Proficiencies</h2>
+          <div id="skills-list" class="flex flex-wrap gap-2 mt-4"></div>
+        </div>
+
+        <div class="mt-8">
+          <h2 class="section-title">Languages</h2>
+          <ul id="languages-list" class="space-y-1 text-gray-600"></ul>
+        </div>
+      </div>
+
+      <!-- Main Section -->
+      <div class="main-section">
+        <!-- Professional Summary -->
+        <div>
+          <h2 class="section-title">Professional Summary</h2>
+          <p class="text-gray-600" id="summary"></p>
+        </div>
+        <!-- Professional Experience -->
+        <div class="experience-section mt-8">
+          <h2 class="section-title">Relevant Experience</h2>
+          <div id="experience-container"></div>
+        </div>
+
+        <!-- Education -->
+        <div class="education-section mt-8">
+          <h2 class="section-title">Academic History</h2>
+          <div id="education-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const resumeData = {
+      name: "Mohd Shamsuddin",
+      email: "mohdshamsuddin479@gmail.com",
+      phone: "+91 9182638751",
+      location: "Hyderabad, India",
+      summary: "Computer Science Engineering graduate with hands-on experience in front-end and full-stack development through internships and apprenticeships. Proficient in Python, JavaScript, React.js, Tailwind CSS, Node.js, and MongoDB, with a strong foundation in building responsive, user-centric web applications. A fast learner and collaborative team player, eager to contribute to innovative projects and grow as a full-stack developer.",
+      skills: [
+        "Python", "Java", "JavaScript", "HTML", "CSS", "React.js", "Tailwind CSS",
+        "Node.js", "Express.js", "SQL", "MongoDB", "Git", "GitHub"
+      ],
+      experience: [
+        {
+          title: "Full Stack Development Apprentice",
+          company: "SD Hub",
+          duration: "June 2025 – Present",
+          description: [
+            "Gained practical experience applying full-stack development principles, with a focus on the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+            "Developed and deployed responsive web applications under mentorship.",
+            "Collaborated with peers using Git/GitHub while adhering to Agile methodologies."
+          ]
+        },
+        {
+          title: "Front-End Developer Intern",
+          company: "Cognifyz Technologies (Remote)",
+          duration: "April 2024 – May 2024",
+          description: [
+            "Developed a responsive and interactive website using HTML, CSS, and JavaScript.",
+            "Applied responsive design principles to ensure cross-device compatibility.",
+            "Enhanced user engagement by implementing interactive elements and integrating external APIs for dynamic content.",
+            "Designed and validated user-friendly web forms for data collection."
+          ]
+        }
+      ],
+      education: [
+        {
+          degree: "Bachelor of Engineering (CSE)",
+          school: "Lords Institute of Engineering & Technology, Hyderabad",
+          duration: "November 2021 – May 2025"
+        },
+        {
+          degree: "Intermediate (MPC)",
+          school: "Sri Chaitanya Junior College, Hyderabad",
+          duration: "June 2019 – May 2021"
+        },
+        {
+          degree: "High School (CBSE)",
+          school: "Azra Public School, Hyderabad",
+          duration: "June 2018 – May 2019"
+        }
+      ],
+      languages: [
+        "English (Proficient)",
+        "Hindi (Proficient)",
+        "Urdu (Native)"
+      ]
+    };
+
+    // DOM Elements
+    const nameEl = document.getElementById('name');
+    const locationEl = document.getElementById('location');
+    const phoneEl = document.getElementById('phone');
+    const emailLinkEl = document.getElementById('email-link');
+    const summaryEl = document.getElementById('summary');
+    const skillsListEl = document.getElementById('skills-list');
+    const experienceContainerEl = document.getElementById('experience-container');
+    const educationContainerEl = document.getElementById('education-container');
+    const languagesListEl = document.getElementById('languages-list');
+
+    // Populate the Resume
+    function populateResume() {
+      nameEl.textContent = resumeData.name;
+      locationEl.textContent = resumeData.location;
+      phoneEl.textContent = resumeData.phone;
+      emailLinkEl.textContent = resumeData.email;
+      emailLinkEl.href = `mailto:${resumeData.email}`;
+      summaryEl.textContent = resumeData.summary;
+
+      // Populate Skills
+      skillsListEl.innerHTML = resumeData.skills.map(skill => `
+                <span class="rounded-full px-3 py-1 bg-gray-200 text-sm font-medium text-gray-700">${skill}</span>
+            `).join('');
+
+      // Populate Experience
+      experienceContainerEl.innerHTML = resumeData.experience.map(exp => `
+                <div class="experience-item">
+                    <h3 class="font-semibold text-lg">${exp.title} | ${exp.company}</h3>
+                    <p class="text-sm italic text-gray-500 mb-2">${exp.duration}</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        ${exp.description.map(desc => `<li>${desc}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+
+      // Populate Education
+      educationContainerEl.innerHTML = resumeData.education.map(edu => `
+                <div class="education-item">
+                    <h3 class="font-semibold text-lg">${edu.degree}</h3>
+                    <p class="text-sm italic text-gray-500 mb-1">${edu.school}</p>
+                    <p class="text-sm text-gray-600">${edu.duration}</p>
+                </div>
+            `).join('');
+
+      // Populate Languages
+      languagesListEl.innerHTML = resumeData.languages.map(lang => `
+                <li>${lang}</li>
+            `).join('');
+    }
+
+    window.onload = populateResume;
+  </script>
+</body>
+
+</html>
